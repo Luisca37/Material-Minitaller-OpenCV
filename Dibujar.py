@@ -1,17 +1,19 @@
 import numpy as np
 import cv2 as cv
 # Create a black image
+#img = cv.imread('imagen.jpg') #lee la imagen desde iun arcvhivo
+
 img = np.zeros((512,512,3), np.uint8)
-# Dibuja una linea azul en diagonal con un grueso de 5 px
+
 cv.line(img,(0,0),(511,511),(255,0,0),5)
 
-cv.rectangle(img,(384,0),(510,128),(0,255,0),3)
+cv.rectangle(img,(384,0),(510,128),(0,255,0),80)
 
 cv.circle(img,(447,63), 63, (0,0,255), -1)
 
 cv.ellipse(img,(256,256),(100,50),0,0,180,255,-1)
 
-pts = np.array([[10,5],[20,30],[70,20],[50,10]], np.int32)
+pts = np.array([[10,5],[20,30],[70,20],[50,10],[80,67]], np.int32)
 pts = pts.reshape((-1,1,2))
 cv.polylines(img,[pts],True,(0,255,255))
 
